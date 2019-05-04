@@ -26,7 +26,6 @@ int main(int argc, const char * argv[]) {
 }
 ```
 
-
 ``` console
 2019-05-04 08:46:02.709316-0600 ErrorHandling_ObjectiveC[35817:2068277] Error Domain=NSCocoaErrorDomain Code=260 "The file “test.txt” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/tmp/test.txt, NSUnderlyingError=0x100705fb0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
 Program ended with exit code: 0
