@@ -33,4 +33,40 @@ int main(int argc, const char * argv[]) {
 Program ended with exit code: 0
 ```
 
+### let's create a txt file in /tmp to know what errorEncoding get after the method.
+
+``` objective-c
+//
+//  main.m
+//  ErrorHandling_ObjectiveC
+//
+//  Created by Carlos Santiago Cruz on 5/4/19.
+//  Copyright © 2019 Carlos Santiago Cruz. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        NSError *errorEncoding = nil;
+        NSString *string = [NSString stringWithContentsOfFile:@"/tmp/test.txt"
+                                                     encoding:NSUTF8StringEncoding
+                                                        error:&errorEncoding];
+        // methods returns nil on error
+        if (string == nil) {
+            NSLog(@"%@", errorEncoding);
+        } else {
+            NSLog(@"the value of errorEncoding is: %@", errorEncoding);
+        }
+        // if the method returns and error, set the variable errorEncoding
+    }
+    return 0;
+}
+```
+
+
+``` console
+2019-05-04 08:57:35.073237-0600 ErrorHandling_ObjectiveC[35919:2079142] the value of errorEncoding is: (null)
+Program ended with exit code: 0
+```
 
